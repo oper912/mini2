@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mini.location.mappers.LocationMapper">
+
+	<select id='getPoster' resultType="Movie">
+		select mcode, mimg, mtitle
+		  from tb_movie
+		 where mcode in ( select mcode
+						    from tb_location
+						   where pno
+		<choose>
+			<when test="pno == 0">
+				in (select pno
+				      from tb_place
+				     where zcode = #{zcode}))
+			</when>
+			<otherwise>
+				= #{pno})
+			</otherwise>
+		</choose>
+	</select>
+	
+</mapper>
+
+	
+	

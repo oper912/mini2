@@ -1,0 +1,327 @@
+    /* Colors */
+    #france-map {
+        /* Container */
+        /* TEXT BLOCKS */
+        /* Default svg style */
+        /* Style SVG hover */
+    }
+    div#mapbox {
+        margin-left: 10%;
+    }
+    div#righttext {
+        margin-left: 90%;
+    }
+    #france-map .col-30 {
+        width: 10%;
+/*         display: inline-block; */
+/*         position: fixed; */
+
+        float: left;
+    }
+    #france-map .col-30 .blocks-txts {
+        padding-top: 80px;
+    }
+    #france-map .col-40 {
+        width: 80%;
+/*         display: inline-block; */
+/*         position: fixed; */
+        float: left;
+    }
+    #france-map .blocks-txts {
+        padding-top: 100px;
+    }
+    #france-map .blocks-txts .block-txt {
+        padding: 10px;
+    }
+    #france-map .blocks-txts .block-txt p {
+        font-size: 14px;
+        line-height: 20px;
+        color: #808080;
+    }
+    #france-map .blocks-txts .block-txt p strong {
+        font-weight: bold;
+        color: #808080;
+    }
+    #france-map .blocks-txts .block-txt.left * {
+        text-align: right;
+    }
+    #france-map .blocks-txts .block-txt.active .block-txt-title {
+        color: #005bba;
+    }
+    #france-map .blocks-txts .block-txt .block-txt-title {
+        color: #c4d600;
+        transition: color 0.3s;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    #france-map .blocks-txts .block-txt .block-txt-title.centered {
+        text-align: center;
+        font-size: 28px;
+    }
+    #france-map .blocks-txts .block-txt .block-txt-paragraphe p {
+        font-family: arial, sans-serif;
+        margin: 0;
+    }
+    #france-map .st0 {
+        fill: #c4d600;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+    }
+    #france-map .st1 {
+        fill: #b6bf00;
+    }
+    #france-map .st1:hover {
+        fill: #005bba;
+    }
+    #france-map .st2 {
+        fill: #005bba;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+    }
+    #france-map .st2:hover {
+        fill: #005bba;
+    }
+    #france-map .st3 {
+        fill: #a8b3ba;
+    }
+    #france-map .st3:hover {
+        fill: #005bba;
+    }
+    #france-map .st4 {
+        fill: #ffffff;
+    }
+    #france-map .st5 {
+    }
+    #france-map .st5:hover {
+        fill: #005bba;
+    }
+    #france-map .st6:hover {
+        fill: #005bba;
+    }
+    #france-map .st7 {
+        fill: #fe5815;
+    }
+    #france-map svg {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        display: block;
+    }
+    @media screen and (max-width: 1280px) {
+        #france-map svg {
+            height: 100%;
+            margin-top: 10px;
+        }
+    }
+    #france-map svg path {
+        cursor: pointer;
+    }
+    #france-map svg text {
+        pointer-events: none;
+        font-size: 25px;
+    }
+    #france-map [id^="region"] {
+        -webkit-tap-highlight-color: transparent;
+    }
+    #france-map #region_1 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_1:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_2 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_2:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_3 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_3:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_4 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_4:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_5 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_5:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_6 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_6:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_7 {
+        fill: #c4d600;
+        transition: fill 0.3s;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_7:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_8 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_8:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_9 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_9:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_10 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_10:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_11 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_11:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_12 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_12:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+
+    }
+    #france-map #region_13 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_13:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+    }
+    #france-map #region_14 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_14:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_15 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_15:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_17 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_17:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_16 {
+        transition: fill 0.3s;
+        fill: #c4d600;
+        stroke: white;
+        stroke-width: 3px;
+    }
+    #france-map #region_16:hover {
+        fill: #005bba;
+        stroke: white;
+        stroke-width: 3px;
+    }

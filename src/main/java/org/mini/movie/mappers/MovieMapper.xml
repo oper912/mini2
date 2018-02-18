@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mini.movie.mappers.MovieMapper">
+
+<select id="readreview">
+	
+	select c.cno ,c.ccontent, c.cupdate ,ci.cimg
+	from tb_report r , tb_comment c , tb_commentimg ci
+	where r.rno = #{c.rno} and c.cno = #{ci.cno}
+	
+</select>
+
+<select id="list">
+
+	select r.rno , r.rtitle , r.rcontent , r.rregdate ,ri.rimg
+	from tb_member m , tb_report r , tb_reportimg ri
+	where m.id = #{r.id} and r.rno = #{ri.rno}
+	
+</select>
+
+<select id="test" resultType="report">
+	select * from report
+</select>
+
+<insert id="place">
+	insert into tb_report(pname , addr) value(#{pname},#{addr})
+</insert>
+
+<select id="getList" resultType="reportlist">
+	
+	<choose>
+		<when test="search != ''">
+			select rimg, rpath, r.*
+				from
+				(select rno, rtitle, rcontent  
+						from 
+		  						(select mcode from tb_movie where mtitle like concat('%', #{search}, '%') ) movie left outer join tb_report report on movie.mcode = report.mcode
+				) r inner join tb_reportimg img on r.rno = img.rno group by img.rno
+		</when>
+		<otherwise>
+			select r.* , ri.rimg, ri.rpath
+				from tb_report r , tb_reportimg ri
+			where r.rno = ri.rno
+			group by ri.rno
+		</otherwise>
+	</choose> 
+	order by r.rno desc limit #{cri.skip}, #{cri.size}	
+</select>
+
+<select id="getTotal" resultType="int">
+	select count(rno)
+	from
+	<choose>
+		<when test="search != ''">
+			(select mcode from tb_movie where mtitle like concat('%', #{search}, '%') ) movie left outer join tb_report report on movie.mcode = report.mcode
+		</when>
+		<otherwise>
+			tb_report
+		</otherwise>
+	</choose>
+</select>
+
+<insert id="insertReport">
+	insert into tb_report(rtitle, rcontent, id, mcode)
+	values(#{title}, #{content}, 'test', #{mcode})
+</insert>
+
+<insert id="insertReportImg">
+     <selectKey keyProperty="rno" resultType="int" order="BEFORE">
+          select ifnull(max(rno),0) from tb_report
+     </selectKey>
+     		insert into tb_reportimg
+          (rno , rimg , rpath)
+        values
+          (#{rno}, #{rimg}, #{rpath})    
+</insert>
+   
+<select id="selectZone" resultType="int">
+	select zcode 
+		from tb_zone
+	 where zname = #{zname}
+</select>
+<!-- <insert id="insertZoneCode">
+     <selectKey keyProperty="zcode" resultType="int" order="BEFORE">
+          select zone.zcode
+         from zone , place
+         where place.addr like #{keword} = zone.zname
+     </selectKey>
+     
+     insert into tb_place
+       (zcode, adder, pname)
+     values
+       (#{zcode} , #{addr} , #{pname} })
+</insert>
+
+
+
+<select id="selectAddr" resultType="String">
+	select  addr
+		from tb_place
+	 where zcode = #{zcode} 
+	 	  and addr = #{addr}
+</select>
+
+<insert id="insertPlace">
+	insert into tb_place(pname, addr, zcode)
+	values(#{pname}, #{addr}, #{zcode})
+</insert> 
+
+<insert id="insertMarkersNone">
+	<selectKey keyProperty="rno" resultType="int" order="BEFORE">
+		select ifnull(max(rno),0) from tb_report
+	</selectKey>
+	insert into tb_markers(pno, rno)
+	values (#{lastIndex}, rno)
+			
+</insert>
+
+
+
+<insert id="insertMarkers">
+	<selectKey keyProperty="rno" resultType="int" order="BEFORE">
+		select ifnull(max(rno),0) from tb_report
+	</selectKey>
+	insert into tb_markers(pno, rno)
+	values ((select pno from tb_place), rno)
+</insert>-->
+
+
+
+<select id="isExist" resultType="Integer">
+   select pno
+     from tb_place
+    where addr = #{addr}
+</select>
+
+<!-- pno == null -->
+<insert id="putPlace">
+insert into tb_place (pname, addr, zcode)
+              values (#{pname}, #{addr}, #{zcode})
+</insert>
+
+
+<insert id="putMarkers">
+    insert into tb_markers (pno, rno)
+        values (#{lastPno}, #{rno})
+</insert>
+
+</mapper>
+  

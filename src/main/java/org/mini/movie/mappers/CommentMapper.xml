@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mini.movie.mappers.CommentMapper">
+
+<!-- <select id="read">
+	
+	select c.cno ,c.ccontent, c.cupdate ,ci.cimg
+	from tb_report r , tb_comment c , tb_comment ci
+	where r.rno = #{c.rno} and c.cno = #{ci.cno}
+	
+</select> -->
+
+<update id="update">
+	update tb_comment set ccontent=#{ccontent}  where cno=#{cno} 
+</update>
+
+<select id="detaillist">
+
+	select r.rno , r.rtitle , r.rcontent , r.rregdate ,ri.rimg
+	from tb_member m , tb_report r , tb_reportimg ri
+	where m.id = #{r.id} and r.rno = #{ri.rno}
+	
+</select>
+
+<delete id="delete">
+	delete from tb_comment where cno= #{cno}
+</delete>
+
+<insert id="create">
+	insert into tb_comment(ctitle ,cimg) value(#{ctitle} , #{cimg})
+</insert>
+
+
+
+
+</mapper>
